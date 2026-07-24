@@ -1,0 +1,35 @@
+directory							filename									type	value
+output/sounds/music					music_idol_carry_distant_lp_141bpm.wav		tts		The urn is decaying!!!
+output/sounds/music					music_idol_carry_lp_141bpm.wav				copy	src/silence.wav
+output/sounds/music					music_idol_return_opponent.wav				tts		Enemy captured the urn!!!
+output/sounds/music					music_idol_return_team.wav					tts		We captured the urn!!!
+output/sounds/music					music_idol_timer_lp_opponent_160bpm.wav		tts		Enemy urn is decaying!!!
+output/sounds/music					music_idol_timer_lp_team_160bpm.wav			tts		Team urn is decaying!!!
+output/sounds/music					music_koth_announce.wav						tts		A rift is spawning!!!
+output/sounds/music					music_koth_capture_160bpm.wav				copy	src/silence.wav
+output/sounds/music					music_koth_capture_block_160bpm.wav			copy	src/silence.wav
+output/sounds/music					music_koth_capture_fx_160bpm.wav			copy	src/silence.wav
+output/sounds/music					music_koth_expire.wav						tts		The rift has expired!!!
+output/sounds/music					music_koth_lost.wav							tts		We lost the rift!!!
+output/sounds/music					music_koth_won.wav							tts		We won the rift!!!
+output/sounds/music					music_stinger_game_over_lose.wav			copy	src/silence.wav
+output/sounds/music					music_stinger_game_over_win.wav				copy	src/silence.wav
+
+output/sounds/music/brawl			music_brawl_draft_95bpm.wav					copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_draft_fx_95bpm.wav				copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_draft_timer_95bpm.wav			copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_match_lost_95bpm.wav			copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_match_won_95bpm.wav				copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_overtime_95bpm.wav				copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_round_1_start_95bpm.wav			copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_round_2_start_95bpm.wav			copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_round_3_start_95bpm.wav			copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_round_4_start_95bpm.wav			copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_round_5_start_95bpm.wav			copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_round_lost_95bpm.wav			copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_round_won_95bpm.wav				copy	src/silence.wav
+output/sounds/music/brawl			music_brawl_titles_117bpm-95bpm.wav			copy	src/silence.wav
+
+output/sounds/music/match_intro		music_match_intro_flourish_160bpm.wav		copy	src/silence.wav
+output/sounds/music/match_intro		music_match_intro_king_160bpm.wav			copy	src/silence.wav
+output/sounds/music/match_intro		music_match_intro_mother_160bpm.wav			copy	src/silence.wav
