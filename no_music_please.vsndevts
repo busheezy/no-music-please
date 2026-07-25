@@ -11,6 +11,12 @@
 		vsnd_duration = 0.050023
 	}
 
+	NoMusic.Announcer =
+	{
+		base = "Base.VO.Announcer"
+		volume = 2.0
+	}
+
 	// Frontend, hideout, and world music.
 	Music.MainMenu = { base = "NoMusic.Null" }
 
@@ -91,24 +97,24 @@
 	Stinger.TitanShield2.Killed.Friendly = { base = "NoMusic.Null" }
 	Stinger.TitanShield2.Killed.Enemy = { base = "NoMusic.Null" }
 
-	// Voice cues are disabled in Base and restored by the selected TTS addon.
-	Stinger.Respawn.Countdown = { base = "NoMusic.Null" }
-	Stinger.MidBoss.Arrived = { base = "NoMusic.Null" }
+	// TTS gameplay cues.
+	Stinger.Respawn.Countdown = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_stinger_player_respawn_countdown.vsnd" ] }
+	Stinger.MidBoss.Arrived = { base = "NoMusic.Announcer" delay = 1.0 vsnd_files = [ "sounds/music/music_stinger_mid_boss_arrived.vsnd" ] }
 
-	Stinger.Rejuvinator.Claimed.Friendly = { base = "NoMusic.Null" }
-	Stinger.Rejuvinator.Claimed.Enemy = { base = "NoMusic.Null" }
-	Stinger.Rejuvinator.Descent = { base = "NoMusic.Null" }
-	Stinger.Respawn.Rejuvinator = { base = "NoMusic.Null" }
-	Stinger.Rejuvinator.Expired = { base = "NoMusic.Null" }
+	Stinger.Rejuvinator.Claimed.Friendly = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_stinger_rejuv_won.vsnd" ] }
+	Stinger.Rejuvinator.Claimed.Enemy = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_stinger_rejuv_lost.vsnd" ] }
+	Stinger.Rejuvinator.Descent = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_stinger_rejuv_drop_6s.vsnd" ] }
+	Stinger.Respawn.Rejuvinator = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_stinger_rejuv_won.vsnd" ] }
+	Stinger.Rejuvinator.Expired = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_stinger_rejuv_lost.vsnd" ] }
 
-	Stinger.Idol.Returned.Team = { base = "NoMusic.Null" }
-	Stinger.Idol.Returned.Opponent = { base = "NoMusic.Null" }
-	Stinger.Idol.AnnounceDrop = { base = "NoMusic.Null" }
+	Stinger.Idol.Returned.Team = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_idol_return_team.vsnd" ] }
+	Stinger.Idol.Returned.Opponent = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_idol_return_opponent.vsnd" ] }
+	Stinger.Idol.AnnounceDrop = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_idol_announce.vsnd" ] }
 
-	Stinger.Koth.Announce = { base = "NoMusic.Null" }
-	Stinger.Koth.Win = { base = "NoMusic.Null" }
-	Stinger.Koth.Lose = { base = "NoMusic.Null" }
-	Stinger.Koth.Expire = { base = "NoMusic.Null" }
+	Stinger.Koth.Announce = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_koth_announce.vsnd" ] }
+	Stinger.Koth.Win = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_koth_win.vsnd" ] }
+	Stinger.Koth.Lose = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_koth_lose.vsnd" ] }
+	Stinger.Koth.Expire = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_koth_expire.vsnd" ] }
 
 	// These custom sound events are documented here because they cannot be safely
 	// redefined as ordinary events; their music files are replaced with silent WAVs.

@@ -2,8 +2,7 @@
 set -Eeuo pipefail
 
 input="${1:-files.tsv}"
-base_soundevents_source="no_music_please_base.vsndevts"
-tts_soundevents_source="no_music_please_tts.vsndevts"
+soundevents_source="no_music_please.vsndevts"
 silence_source="null.wav"
 google_tts_language="${GOOGLE_TTS_LANGUAGE:-en-US}"
 google_tts_male_voice="${GOOGLE_TTS_MALE_VOICE:-en-US-Chirp3-HD-Charon}"
@@ -115,54 +114,13 @@ google_tts() {
 }
 
 for source in \
-    "$base_soundevents_source" \
-    "$tts_soundevents_source" \
+    "$soundevents_source" \
     "$silence_source"; do
     [[ -f "$source" ]] || {
         echo "Source file does not exist: $source" >&2
         exit 1
     }
 done
-
-base_output="output/Base"
-base_soundevents_destination="$base_output/soundevents/no_music_please_base.vsndevts"
-mkdir -p "$(dirname "$base_soundevents_destination")"
-echo "COPY -> $base_soundevents_destination"
-cp "$base_soundevents_source" "$base_soundevents_destination"
-
-line_number=0
-while IFS=$'\t' read -r directory filename type value extra; do
-    ((line_number += 1))
-
-    if ((line_number == 1)); then
-        if [[ "$directory"$'\t'"$filename"$'\t'"$type"$'\t'"$value" != $'directory\tfilename\ttype\tvalue' ]]; then
-            echo "Invalid TSV header in $input" >&2
-            exit 1
-        fi
-        continue
-    fi
-
-    [[ -n "$directory$filename$type$value$extra" ]] || continue
-
-    if [[ -z "$directory" || -z "$filename" || -z "$type" || -z "$value" || -n "$extra" ]]; then
-        echo "Invalid TSV row $line_number in $input" >&2
-        exit 1
-    fi
-
-    case "$type" in
-        copy|tts) ;;
-        *)
-            echo "Invalid type on TSV row $line_number: $type" >&2
-            exit 1
-            ;;
-    esac
-
-    # Base silences every asset, including files restored by a voice package.
-    destination="$base_output/${directory%/}/$filename"
-    mkdir -p "$base_output/$directory"
-    echo "MUTE -> $destination"
-    cp "$silence_source" "$destination"
-done < "$input"
 
 voices=("$google_tts_male_voice" "$google_tts_female_voice")
 voice_names=("Charon" "Kore")
@@ -177,11 +135,11 @@ for index in "${!voices[@]}"; do
     fi
 
     voice_output="output/$voice_name"
-    soundevents_destination="$voice_output/soundevents/no_music_please_tts.vsndevts"
+    soundevents_destination="$voice_output/soundevents/no_music_please.vsndevts"
 
     mkdir -p "$(dirname "$soundevents_destination")"
     echo "COPY -> $soundevents_destination"
-    cp "$tts_soundevents_source" "$soundevents_destination"
+    cp "$soundevents_source" "$soundevents_destination"
 
     line_number=0
     while IFS=$'\t' read -r directory filename type value extra; do
@@ -204,11 +162,13 @@ for index in "${!voices[@]}"; do
 
         case "$type" in
             copy)
-                continue
+                destination="$voice_output/${directory%/}/$filename"
+                mkdir -p "$voice_output/$directory"
+                echo "MUTE -> $destination"
+                cp "$silence_source" "$destination"
                 ;;
 
             tts)
-                # The voice package uses the same path so it overrides Base.
                 destination="$voice_output/${directory%/}/$filename"
                 mkdir -p "$voice_output/$directory"
                 echo "TTS  -> $destination"
