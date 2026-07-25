@@ -57,7 +57,7 @@ output/sounds/music	music_silence_1s_loop.wav	copy	src/silence.wav
 output/sounds/music	music_stinger_first_blood.wav	tts	First blood!
 output/sounds/music	music_stinger_game_over_lose.wav	tts	Defeat!
 output/sounds/music	music_stinger_game_over_win.wav	tts	Victory!
-output/sounds/music	music_stinger_generator_killed.wav	tts	A generator was destroyed!
+output/sounds/music	music_stinger_generator_killed.wav	tts	A shrine was destroyed!
 output/sounds/music	music_stinger_ks_01.wav	tts	Kill streak!
 output/sounds/music	music_stinger_ks_02.wav	tts	Kill streak!
 output/sounds/music	music_stinger_ks_03.wav	tts	Kill streak!
@@ -71,7 +71,7 @@ output/sounds/music	music_stinger_ks_10.wav	tts	Kill streak!
 output/sounds/music	music_stinger_mid_boss_arrived.wav	tts	Mid Boss has arrived!
 output/sounds/music	music_stinger_player_death.wav	copy	src/silence.wav
 output/sounds/music	music_stinger_player_respawn.wav	tts	Respawned!
-output/sounds/music	music_stinger_player_respawn_countdown.wav	tts	Respawning in five seconds!
+output/sounds/music	music_stinger_player_respawn_countdown.wav	tts	Respawning soon!
 output/sounds/music	music_stinger_rejuv_drop_6_5s.wav	tts	Rejuvenator dropping!
 output/sounds/music	music_stinger_rejuv_drop_6s.wav	tts	Rejuvenator dropping!
 output/sounds/music	music_stinger_rejuv_drop_7_5s.wav	tts	Rejuvenator dropping!
@@ -80,8 +80,8 @@ output/sounds/music	music_stinger_rejuv_drop_8s.wav	tts	Rejuvenator dropping!
 output/sounds/music	music_stinger_rejuv_drop_9s.wav	tts	Rejuvenator dropping!
 output/sounds/music	music_stinger_rejuv_lost.wav	tts	The enemy claimed the Rejuvenator!
 output/sounds/music	music_stinger_rejuv_won.wav	tts	Our team claimed the Rejuvenator!
-output/sounds/music	music_stinger_t1_killed.wav	tts	Tier one destroyed!
-output/sounds/music	music_stinger_t3_killed.wav	tts	Tier three destroyed!
+output/sounds/music	music_stinger_t1_killed.wav	tts	Guardian or Walker destroyed!
+output/sounds/music	music_stinger_t3_killed.wav	tts	Patron's first stage destroyed!
 output/sounds/music	music_stringer_kill_streak.wav	tts	Kill streak!
 output/sounds/music	music_teleporter_01.wav	copy	src/silence.wav
 output/sounds/music	music_title_155bpm.wav	copy	src/silence.wav
