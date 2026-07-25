@@ -3,16 +3,19 @@ set -Eeuo pipefail
 
 input="${1:-files.tsv}"
 soundevents_source="no_music_please.vsndevts"
-soundevents_destination="output/soundevents/no_music_please.vsndevts"
 google_tts_language="${GOOGLE_TTS_LANGUAGE:-en-US}"
-google_tts_voice="${GOOGLE_TTS_VOICE:-en-US-Chirp3-HD-Charon}"
+google_tts_male_voice="${GOOGLE_TTS_MALE_VOICE:-en-US-Chirp3-HD-Charon}"
+google_tts_female_voice="${GOOGLE_TTS_FEMALE_VOICE:-en-US-Chirp3-HD-Kore}"
 google_tts_volume_gain_db="16"
 google_cloud_project="${GOOGLE_CLOUD_PROJECT:-}"
 google_access_token=""
 
+rm -rf ./output
+
 google_tts() {
     local text="$1"
     local destination="$2"
+    local voice="$3"
     local request
     local response
     local audio_content
@@ -54,7 +57,7 @@ google_tts() {
                     volumeGainDb: Number(volumeGainDb)
                 }
             }));
-        ' "$text" "$google_tts_language" "$google_tts_voice" "$google_tts_volume_gain_db"
+        ' "$text" "$google_tts_language" "$voice" "$google_tts_volume_gain_db"
     )"
 
     if ! response="$(
@@ -114,46 +117,59 @@ google_tts() {
     exit 1
 }
 
-mkdir -p "$(dirname "$soundevents_destination")"
-echo "COPY -> $soundevents_destination"
-cp "$soundevents_source" "$soundevents_destination"
+voices=("$google_tts_male_voice" "$google_tts_female_voice")
 
-line_number=0
-while IFS=$'\t' read -r directory filename type value extra; do
-    ((line_number += 1))
-
-    if ((line_number == 1)); then
-        if [[ "$directory"$'\t'"$filename"$'\t'"$type"$'\t'"$value" != $'directory\tfilename\ttype\tvalue' ]]; then
-            echo "Invalid TSV header in $input" >&2
-            exit 1
-        fi
-        continue
-    fi
-
-    [[ -n "$directory$filename$type$value$extra" ]] || continue
-
-    if [[ -z "$directory" || -z "$filename" || -z "$type" || -z "$value" || -n "$extra" ]]; then
-        echo "Invalid TSV row $line_number in $input" >&2
+for voice in "${voices[@]}"; do
+    if [[ -z "$voice" || "$voice" == */* || "$voice" == "." || "$voice" == ".." ]]; then
+        echo "Invalid Google TTS voice name for an output folder: $voice" >&2
         exit 1
     fi
 
-    destination="${directory%/}/$filename"
-    mkdir -p "$directory"
+    voice_name="${voice##*-}"
+    voice_output="output/$voice_name"
+    soundevents_destination="$voice_output/soundevents/no_music_please.vsndevts"
 
-    case "$type" in
-        tts)
-            echo "TTS  -> $destination"
-            google_tts "$value" "$destination"
+    mkdir -p "$(dirname "$soundevents_destination")"
+    echo "COPY -> $soundevents_destination"
+    cp "$soundevents_source" "$soundevents_destination"
 
-            [[ -s "$destination" ]] || {
-                echo "TTS output was not created: $destination" >&2
+    line_number=0
+    while IFS=$'\t' read -r directory filename type value extra; do
+        ((line_number += 1))
+
+        if ((line_number == 1)); then
+            if [[ "$directory"$'\t'"$filename"$'\t'"$type"$'\t'"$value" != $'directory\tfilename\ttype\tvalue' ]]; then
+                echo "Invalid TSV header in $input" >&2
                 exit 1
-            }
-            ;;
+            fi
+            continue
+        fi
 
-        *)
-            echo "Invalid type on TSV row $line_number: $type" >&2
+        [[ -n "$directory$filename$type$value$extra" ]] || continue
+
+        if [[ -z "$directory" || -z "$filename" || -z "$type" || -z "$value" || -n "$extra" ]]; then
+            echo "Invalid TSV row $line_number in $input" >&2
             exit 1
-            ;;
-    esac
-done < "$input"
+        fi
+
+        destination="$voice_output/${directory%/}/$filename"
+        mkdir -p "$voice_output/$directory"
+
+        case "$type" in
+            tts)
+                echo "TTS  -> $destination"
+                google_tts "$value" "$destination" "$voice"
+
+                [[ -s "$destination" ]] || {
+                    echo "TTS output was not created: $destination" >&2
+                    exit 1
+                }
+                ;;
+
+            *)
+                echo "Invalid type on TSV row $line_number: $type" >&2
+                exit 1
+                ;;
+        esac
+    done < "$input"
+done

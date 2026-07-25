@@ -136,15 +136,16 @@
 	}
 	Music.Idol.Timer.Lp =
 	{
-		base = "NoMusic.Null"
-		type = "citadel_default_2d"
+		type = "citadel_music_urn_drop"
+		volume = -100.0
 		vsnd_files = [ "sounds/common/null.vsnd" ]
+		vsnd_files_opponent_control = [ "sounds/common/null.vsnd" ]
+		vsnd_duration = 0.050023
 	}
 	Music.Koth.Capture.Lp =
 	{
-		base = "NoMusic.Null"
-		type = "citadel_default_2d"
-		vsnd_files = [ "sounds/common/null.vsnd" ]
+		type = "citadel_music_koth_capture"
+		volume = -100.0
 	}
 
 	// TTS gameplay cues.
