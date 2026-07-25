@@ -1,10 +1,10 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	// All muted music events inherit Source 2's built-in null sound.
-	NoMusic.Null = 
+	NoMusic.Null =
 	{
 		base = "Base.Music.2d"
-		vsnd_files = 
+		vsnd_files =
 		[
 			"sounds/common/null.vsnd",
 		]
@@ -12,33 +12,73 @@
 	}
 
 	// TTS cues use the same 0 dB volume and Announcer mix routing as game VO.
-	NoMusic.Announcer = 
+	NoMusic.Announcer =
 	{
 		base = "Base.VO.Announcer"
 		volume = 0.0
 	}
 
+	// Frontend, hideout, and world music.
 	Music.MainMenu = { base = "NoMusic.Null" }
-	Music.Title = { base = "NoMusic.Null" }
+	Music.Title =
+	{
+		base = "NoMusic.Null"
+		type = "citadel_default_2d"
+		vsnd_files = [ "sounds/common/null.vsnd" ]
+	}
+
 	Music.Hideout.Build = { base = "NoMusic.Null" }
-	Music.Hideout = { base = "NoMusic.Null" }
+	Music.Hideout =
+	{
+		base = "NoMusic.Null"
+		type = "citadel_default_2d"
+		vsnd_files = [ "sounds/common/null.vsnd" ]
+	}
 	Music.Hideout.Search = { base = "NoMusic.Null" }
 	Music.Hideout.Wait = { base = "NoMusic.Null" }
 	Amb.Hideout.RemRoom = { base = "NoMusic.Null" }
 
+	Music.Shop.Silence = { base = "NoMusic.Null" }
+	Music.Shop =
+	{
+		base = "NoMusic.Null"
+		type = "citadel_default_2d"
+		vsnd_files = [ "sounds/common/null.vsnd" ]
+	}
+	Music.Shop.Secret = { base = "NoMusic.Null" }
+	amb.Music.Teleporter = { base = "NoMusic.Null" }
+
+	// Standard match flow.
 	Music.MatchIntro.Connecting = { base = "NoMusic.Null" }
 	Music.MatchIntro.HeroReveal = { base = "NoMusic.Null" }
 	Music.MatchIntro.MatchStart.King = { base = "NoMusic.Null" }
 	Music.MatchIntro.MatchStart.Mother = { base = "NoMusic.Null" }
+	Music.Match.Formed = { base = "NoMusic.Null" }
 	Music.Zipline.Lp = { base = "NoMusic.Null" }
 	Music.Match.Win = { base = "NoMusic.Null" }
 	Music.Match.Lose = { base = "NoMusic.Null" }
 	Music.PostGame = { base = "NoMusic.Null" }
-	Stinger.Death = { base = "NoMusic.Null" }
-	Music.Koth.Capture.Lp = { base = "NoMusic.Null" }
-	Music.Idol.Pickup.Lp = { base = "NoMusic.Null" }
-	Music.Idol.Timer.Lp = { base = "NoMusic.Null" }
 
+	// Brawl mode.
+	Stinger.Brawl.Overtime.Announce = { base = "NoMusic.Null" }
+	Music.Brawl.Round.Won = { base = "NoMusic.Null" }
+	Music.Brawl.Round.Lost = { base = "NoMusic.Null" }
+	Music.Brawl.Titles = { base = "NoMusic.Null" }
+	Music.Brawl.Draft =
+	{
+		base = "NoMusic.Null"
+		type = "citadel_default_2d"
+		vsnd_files = [ "sounds/common/null.vsnd" ]
+	}
+	Music.Brawl.RoundStart1 = { base = "NoMusic.Null" }
+	Music.Brawl.RoundStart2 = { base = "NoMusic.Null" }
+	Music.Brawl.RoundStart3 = { base = "NoMusic.Null" }
+	Music.Brawl.RoundStart4 = { base = "NoMusic.Null" }
+	Music.Brawl.RoundStart5 = { base = "NoMusic.Null" }
+	Music.Brawl.Match.Won = { base = "NoMusic.Null" }
+	Music.Brawl.Match.Lost = { base = "NoMusic.Null" }
+
+	// Kill streak, rank, and voting stingers.
 	Stinger.KillStreak = { base = "NoMusic.Null" }
 	Stinger.KillStreak.FirstBlood = { base = "NoMusic.Null" }
 	Stinger.KillStreak_01 = { base = "NoMusic.Null" }
@@ -64,231 +104,163 @@
 	Stinger.RevealRank_10 = { base = "NoMusic.Null" }
 	Stinger.RevealRank_11 = { base = "NoMusic.Null" }
 	Stinger.CheaterVote = { base = "NoMusic.Null" }
-	Music.Shop.Silence = { base = "NoMusic.Null" }
 	Stinger.RevealVote = { base = "NoMusic.Null" }
 
-	Stinger.Brawl.Overtime.Announce = { base = "NoMusic.Null" }
-	Music.Brawl.Round.Won = { base = "NoMusic.Null" }
-	Music.Brawl.Round.Lost = { base = "NoMusic.Null" }
-	Music.Brawl.Titles = { base = "NoMusic.Null" }
-	Music.Brawl.Draft = { base = "NoMusic.Null" }
-	Music.Brawl.RoundStart1 = { base = "NoMusic.Null" }
-	Music.Brawl.RoundStart2 = { base = "NoMusic.Null" }
-	Music.Brawl.RoundStart3 = { base = "NoMusic.Null" }
-	Music.Brawl.RoundStart4 = { base = "NoMusic.Null" }
-	Music.Brawl.RoundStart5 = { base = "NoMusic.Null" }
-	Music.Brawl.Match.Won = { base = "NoMusic.Null" }
-	Music.Brawl.Match.Lost = { base = "NoMusic.Null" }
-
-	Music.Base.Attack = 
+	// Gameplay and objective music.
+	Music.Base.Attack =
 	{
-		base = "NoMusic.Announcer"
-		vsnd_files = 
-		[
-			"sounds/music/music_core_exposed_lp.vsnd",
-		]
+		base = "NoMusic.Null"
+		type = "citadel_default_2d"
+		vsnd_files = [ "sounds/common/null.vsnd" ]
+	}
+	Stinger.Death = { base = "NoMusic.Null" }
+	Stinger.Respawn = { base = "NoMusic.Null" }
+
+	Stinger.Tier1.Killed.Friendly = { base = "NoMusic.Null" }
+	Stinger.Tier1.Killed.Enemy = { base = "NoMusic.Null" }
+	Stinger.Tier2.Killed.Friendly = { base = "NoMusic.Null" }
+	Stinger.Tier2.Killed.Enemy = { base = "NoMusic.Null" }
+	Stinger.Titan.Killed.Friendly = { base = "NoMusic.Null" }
+	Stinger.Titan.Killed.Enemy = { base = "NoMusic.Null" }
+
+	Stinger.TitanShield1.Killed.Friendly = { base = "NoMusic.Null" }
+	Stinger.TitanShield1.Killed.Enemy = { base = "NoMusic.Null" }
+	Stinger.TitanShield2.Killed.Friendly = { base = "NoMusic.Null" }
+	Stinger.TitanShield2.Killed.Enemy = { base = "NoMusic.Null" }
+
+	Music.Idol.Pickup.Lp =
+	{
+		base = "NoMusic.Null"
+		type = "citadel_default_2d"
+		vsnd_files = [ "sounds/common/null.vsnd" ]
+	}
+	Music.Idol.Timer.Lp =
+	{
+		base = "NoMusic.Null"
+		type = "citadel_default_2d"
+		vsnd_files = [ "sounds/common/null.vsnd" ]
+	}
+	Music.Koth.Capture.Lp =
+	{
+		base = "NoMusic.Null"
+		type = "citadel_default_2d"
+		vsnd_files = [ "sounds/common/null.vsnd" ]
 	}
 
-	Stinger.Respawn = 
+	// TTS gameplay cues.
+	Stinger.Respawn.Countdown =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
-		[
-			"sounds/music/music_stinger_player_respawn.vsnd",
-		]
-	}
-	Stinger.Respawn.Countdown = 
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
 			"sounds/music/music_stinger_player_respawn_countdown.vsnd",
 		]
 	}
-	Stinger.Rejuvinator.Claimed.Friendly = 
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files = 
-		[
-			"sounds/music/music_stinger_rejuv_won.vsnd",
-		]
-	}
-	Stinger.Rejuvinator.Claimed.Enemy = 
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files = 
-		[
-			"sounds/music/music_stinger_rejuv_lost.vsnd",
-		]
-	}
-	Stinger.Rejuvinator.Descent = 
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files = 
-		[
-			"sounds/music/music_stinger_rejuv_drop_6s.vsnd",
-		]
-	}
-	Stinger.Respawn.Rejuvinator = 
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files = 
-		[
-			"sounds/music/music_stinger_rejuv_won.vsnd",
-		]
-	}
-	Stinger.Rejuvinator.Expired = 
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files = 
-		[
-			"sounds/music/music_stinger_rejuv_lost.vsnd",
-		]
-	}
-	Stinger.MidBoss.Arrived = 
+
+	Stinger.MidBoss.Arrived =
 	{
 		base = "NoMusic.Announcer"
 		delay = 1.0
-		vsnd_files = 
+		vsnd_files =
 		[
 			"sounds/music/music_stinger_mid_boss_arrived.vsnd",
 		]
 	}
 
-	Stinger.Tier1.Killed.Friendly = 
+	Stinger.Rejuvinator.Claimed.Friendly =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
-			"sounds/music/music_stinger_t1_killed.vsnd",
+			"sounds/music/music_stinger_rejuv_won.vsnd",
 		]
 	}
-	Stinger.Tier1.Killed.Enemy = 
+	Stinger.Rejuvinator.Claimed.Enemy =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
-			"sounds/music/music_stinger_t1_killed.vsnd",
+			"sounds/music/music_stinger_rejuv_lost.vsnd",
 		]
 	}
-	Stinger.Tier2.Killed.Friendly = 
+	Stinger.Rejuvinator.Descent =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
-			"sounds/music/music_stinger_t1_killed.vsnd",
+			"sounds/music/music_stinger_rejuv_drop_6s.vsnd",
 		]
 	}
-	Stinger.Tier2.Killed.Enemy = 
+	Stinger.Respawn.Rejuvinator =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
-			"sounds/music/music_stinger_t1_killed.vsnd",
+			"sounds/music/music_stinger_rejuv_won.vsnd",
 		]
 	}
-	Stinger.Titan.Killed.Friendly = 
+	Stinger.Rejuvinator.Expired =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
-			"sounds/music/music_stinger_t3_killed.vsnd",
-		]
-	}
-	Stinger.Titan.Killed.Enemy = 
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files = 
-		[
-			"sounds/music/music_stinger_t3_killed.vsnd",
+			"sounds/music/music_stinger_rejuv_lost.vsnd",
 		]
 	}
 
-	Stinger.TitanShield1.Killed.Friendly = 
+	Stinger.Idol.Returned.Team =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
-		[
-			"sounds/music/music_stinger_generator_killed.vsnd",
-		]
-	}
-	Stinger.TitanShield1.Killed.Enemy = 
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files = 
-		[
-			"sounds/music/music_stinger_generator_killed.vsnd",
-		]
-	}
-	Stinger.TitanShield2.Killed.Friendly = 
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files = 
-		[
-			"sounds/music/music_stinger_generator_killed.vsnd",
-		]
-	}
-	Stinger.TitanShield2.Killed.Enemy = 
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files = 
-		[
-			"sounds/music/music_stinger_generator_killed.vsnd",
-		]
-	}
-
-	Stinger.Idol.Returned.Team = 
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
 			"sounds/music/music_idol_return_team.vsnd",
 		]
 	}
-	Stinger.Idol.Returned.Opponent = 
+	Stinger.Idol.Returned.Opponent =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
 			"sounds/music/music_idol_return_opponent.vsnd",
 		]
 	}
-	Stinger.Idol.AnnounceDrop = 
+	Stinger.Idol.AnnounceDrop =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
 			"sounds/music/music_idol_announce.vsnd",
 		]
 	}
-	Stinger.Koth.Announce = 
+
+	Stinger.Koth.Announce =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
 			"sounds/music/music_koth_announce.vsnd",
 		]
 	}
-	Stinger.Koth.Win = 
+	Stinger.Koth.Win =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
 			"sounds/music/music_koth_win.vsnd",
 		]
 	}
-	Stinger.Koth.Lose = 
+	Stinger.Koth.Lose =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
 			"sounds/music/music_koth_lose.vsnd",
 		]
 	}
-	Stinger.Koth.Expire = 
+	Stinger.Koth.Expire =
 	{
 		base = "NoMusic.Announcer"
-		vsnd_files = 
+		vsnd_files =
 		[
 			"sounds/music/music_koth_expire.vsnd",
 		]
