@@ -1,13 +1,89 @@
 directory	filename	type	value
+sounds/music	null.wav	copy	null.wav
+sounds/music/brawl	music_brawl_draft_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_draft_fx_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_draft_timer_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_match_lost_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_match_won_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_overtime_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_round_1_start_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_round_2_start_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_round_3_start_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_round_4_start_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_round_5_start_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_round_lost_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_round_won_95bpm.wav	copy	null.wav
+sounds/music/brawl	music_brawl_titles_117bpm-95bpm.wav	copy	null.wav
+sounds/music/match_intro	music_match_intro_connecting_60bpm.wav	copy	null.wav
+sounds/music/match_intro	music_match_intro_flourish_160bpm.wav	copy	null.wav
+sounds/music/match_intro	music_match_intro_king_160bpm.wav	copy	null.wav
+sounds/music/match_intro	music_match_intro_mother_160bpm.wav	copy	null.wav
+sounds/music/match_intro	music_match_start_king_160bpm.wav	copy	null.wav
+sounds/music	music_core_exposed_lp.wav	copy	null.wav
+sounds/music	music_curio_christmas.wav	copy	null.wav
+sounds/music	music_curio_seasonal.wav	copy	null.wav
+sounds/music	music_curio_secret_christmas.wav	copy	null.wav
+sounds/music	music_curio_secret_seasonal.wav	copy	null.wav
+sounds/music	music_hideout_build_155bpm.wav	copy	null.wav
+sounds/music	music_hideout_play_base_lp_155bpm.wav	copy	null.wav
+sounds/music	music_hideout_play_base_lp_fx_155bpm.wav	copy	null.wav
+sounds/music	music_hideout_play_high_lp_155bpm.wav	copy	null.wav
+sounds/music	music_hideout_play_low_lp_155bpm.wav	copy	null.wav
+sounds/music	music_hideout_rem_70bpm.wav	copy	null.wav
+sounds/music	music_hideout_rem_fx_70bpm.wav	copy	null.wav
+sounds/music	music_hideout_rem_fx_far_70bpm.wav	copy	null.wav
+sounds/music	music_hideout_search_155bpm.wav	copy	null.wav
 sounds/music	music_idol_announce.wav	tts	The urn is about to spawn!
+sounds/music	music_idol_carry_distant_lp_141bpm.wav	copy	null.wav
+sounds/music	music_idol_carry_lp_141bpm.wav	copy	null.wav
 sounds/music	music_idol_return_opponent.wav	tts	Enemy captured the urn!
 sounds/music	music_idol_return_team.wav	tts	Our team captured the urn!
+sounds/music	music_idol_timer_lp_opponent_160bpm.wav	copy	null.wav
+sounds/music	music_idol_timer_lp_team_160bpm.wav	copy	null.wav
 sounds/music	music_koth_announce.wav	tts	A rift is spawning!
+sounds/music	music_koth_capture_160bpm.wav	copy	null.wav
+sounds/music	music_koth_capture_block_160bpm.wav	copy	null.wav
+sounds/music	music_koth_capture_contest_160bpm.wav	copy	null.wav
+sounds/music	music_koth_capture_fx_160bpm.wav	copy	null.wav
 sounds/music	music_koth_expire.wav	tts	The rift has expired!
 sounds/music	music_koth_lose.wav	tts	The enemy captured the rift!
 sounds/music	music_koth_win.wav	tts	Our team captured the rift!
+sounds/music	music_match_countdown.wav	copy	null.wav
+sounds/music	music_menu_lp.wav	copy	null.wav
+sounds/music	music_menu_winter24_lp.wav	copy	null.wav
+sounds/music	music_postgame_155bpm.wav	copy	null.wav
+sounds/music	music_postgame_temp_155bpm.wav	copy	null.wav
+sounds/music	music_search_wait_temp.wav	copy	null.wav
+sounds/music	music_silence_1s_loop.wav	copy	null.wav
+sounds/music	music_stinger_first_blood.wav	copy	null.wav
+sounds/music	music_stinger_game_over_lose.wav	copy	null.wav
+sounds/music	music_stinger_game_over_win.wav	copy	null.wav
+sounds/music	music_stinger_generator_killed.wav	copy	null.wav
+sounds/music	music_stinger_ks_01.wav	copy	null.wav
+sounds/music	music_stinger_ks_02.wav	copy	null.wav
+sounds/music	music_stinger_ks_03.wav	copy	null.wav
+sounds/music	music_stinger_ks_04.wav	copy	null.wav
+sounds/music	music_stinger_ks_05.wav	copy	null.wav
+sounds/music	music_stinger_ks_06.wav	copy	null.wav
+sounds/music	music_stinger_ks_07.wav	copy	null.wav
+sounds/music	music_stinger_ks_08.wav	copy	null.wav
+sounds/music	music_stinger_ks_09.wav	copy	null.wav
+sounds/music	music_stinger_ks_10.wav	copy	null.wav
 sounds/music	music_stinger_mid_boss_arrived.wav	tts	Mid Boss has arrived!
+sounds/music	music_stinger_player_death.wav	copy	null.wav
+sounds/music	music_stinger_player_respawn.wav	copy	null.wav
 sounds/music	music_stinger_player_respawn_countdown.wav	tts	Respawning soon!
+sounds/music	music_stinger_rejuv_drop_6_5s.wav	copy	null.wav
 sounds/music	music_stinger_rejuv_drop_6s.wav	tts	Rejuvenator dropping!
+sounds/music	music_stinger_rejuv_drop_7_5s.wav	copy	null.wav
+sounds/music	music_stinger_rejuv_drop_7s.wav	copy	null.wav
+sounds/music	music_stinger_rejuv_drop_8s.wav	copy	null.wav
+sounds/music	music_stinger_rejuv_drop_9s.wav	copy	null.wav
 sounds/music	music_stinger_rejuv_lost.wav	tts	The enemy claimed the Rejuvenator!
 sounds/music	music_stinger_rejuv_won.wav	tts	Our team claimed the Rejuvenator!
+sounds/music	music_stinger_t1_killed.wav	copy	null.wav
+sounds/music	music_stinger_t3_killed.wav	copy	null.wav
+sounds/music	music_stringer_kill_streak.wav	copy	null.wav
+sounds/music	music_teleporter_01.wav	copy	null.wav
+sounds/music	music_title_155bpm.wav	copy	null.wav
+sounds/music	music_title_fx_155bpm.wav	copy	null.wav

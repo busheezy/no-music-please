@@ -4,12 +4,13 @@ I wanted to remove music on Deadlock. Music-only events are redirected to
 `sounds/common/null.vsnd`; important cues use generated announcer-style
 voicelines instead.
 
-Run `./gen.sh` to generate male and female versions of the TTS WAV files. Each
-voice gets a complete package named after it under `output`:
+Run `./gen.sh` to generate three independent packages under `output`:
 
-- `output/Charon` (male)
-- `output/Kore` (female)
+- `output/Base` contains all silent music replacements.
+- `output/Charon` contains only the male TTS replacements.
+- `output/Kore` contains only the female TTS replacements.
 
-Compile the contents of the voice folder you want as Source 2 resources in your
-addon. Override the defaults with `GOOGLE_TTS_MALE_VOICE` and
-`GOOGLE_TTS_FEMALE_VOICE`.
+Compile each folder as a separate Source 2 addon. Install `Base` together with
+one voice addon, and give the voice addon higher load priority so its 12 files
+override the silent files at the same paths. Override the generated voices with
+`GOOGLE_TTS_MALE_VOICE` and `GOOGLE_TTS_FEMALE_VOICE`.

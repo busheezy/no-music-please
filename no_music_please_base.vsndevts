@@ -11,40 +11,15 @@
 		vsnd_duration = 0.050023
 	}
 
-	// TTS cues use the same 0 dB volume and Announcer mix routing as game VO.
-	NoMusic.Announcer =
-	{
-		base = "Base.VO.Announcer"
-		volume = 0.0
-	}
-
 	// Frontend, hideout, and world music.
 	Music.MainMenu = { base = "NoMusic.Null" }
-	Music.Title =
-	{
-		base = "NoMusic.Null"
-		type = "citadel_default_2d"
-		vsnd_files = [ "sounds/common/null.vsnd" ]
-	}
 
 	Music.Hideout.Build = { base = "NoMusic.Null" }
-	Music.Hideout =
-	{
-		base = "NoMusic.Null"
-		type = "citadel_default_2d"
-		vsnd_files = [ "sounds/common/null.vsnd" ]
-	}
 	Music.Hideout.Search = { base = "NoMusic.Null" }
 	Music.Hideout.Wait = { base = "NoMusic.Null" }
 	Amb.Hideout.RemRoom = { base = "NoMusic.Null" }
 
 	Music.Shop.Silence = { base = "NoMusic.Null" }
-	Music.Shop =
-	{
-		base = "NoMusic.Null"
-		type = "citadel_default_2d"
-		vsnd_files = [ "sounds/common/null.vsnd" ]
-	}
 	Music.Shop.Secret = { base = "NoMusic.Null" }
 	amb.Music.Teleporter = { base = "NoMusic.Null" }
 
@@ -64,12 +39,6 @@
 	Music.Brawl.Round.Won = { base = "NoMusic.Null" }
 	Music.Brawl.Round.Lost = { base = "NoMusic.Null" }
 	Music.Brawl.Titles = { base = "NoMusic.Null" }
-	Music.Brawl.Draft =
-	{
-		base = "NoMusic.Null"
-		type = "citadel_default_2d"
-		vsnd_files = [ "sounds/common/null.vsnd" ]
-	}
 	Music.Brawl.RoundStart1 = { base = "NoMusic.Null" }
 	Music.Brawl.RoundStart2 = { base = "NoMusic.Null" }
 	Music.Brawl.RoundStart3 = { base = "NoMusic.Null" }
@@ -107,12 +76,6 @@
 	Stinger.RevealVote = { base = "NoMusic.Null" }
 
 	// Gameplay and objective music.
-	Music.Base.Attack =
-	{
-		base = "NoMusic.Null"
-		type = "citadel_default_2d"
-		vsnd_files = [ "sounds/common/null.vsnd" ]
-	}
 	Stinger.Death = { base = "NoMusic.Null" }
 	Stinger.Respawn = { base = "NoMusic.Null" }
 
@@ -128,144 +91,35 @@
 	Stinger.TitanShield2.Killed.Friendly = { base = "NoMusic.Null" }
 	Stinger.TitanShield2.Killed.Enemy = { base = "NoMusic.Null" }
 
-	Music.Idol.Pickup.Lp =
-	{
-		base = "NoMusic.Null"
-		type = "citadel_default_2d"
-		vsnd_files = [ "sounds/common/null.vsnd" ]
-	}
-	Music.Idol.Timer.Lp =
-	{
-		type = "citadel_music_urn_drop"
-		volume = -100.0
-		vsnd_files = [ "sounds/common/null.vsnd" ]
-		vsnd_files_opponent_control = [ "sounds/common/null.vsnd" ]
-		vsnd_duration = 0.050023
-	}
-	Music.Koth.Capture.Lp =
-	{
-		type = "citadel_music_koth_capture"
-		volume = -100.0
-	}
+	// Voice cues are disabled in Base and restored by the selected TTS addon.
+	Stinger.Respawn.Countdown = { base = "NoMusic.Null" }
+	Stinger.MidBoss.Arrived = { base = "NoMusic.Null" }
 
-	// TTS gameplay cues.
-	Stinger.Respawn.Countdown =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_stinger_player_respawn_countdown.vsnd",
-		]
-	}
+	Stinger.Rejuvinator.Claimed.Friendly = { base = "NoMusic.Null" }
+	Stinger.Rejuvinator.Claimed.Enemy = { base = "NoMusic.Null" }
+	Stinger.Rejuvinator.Descent = { base = "NoMusic.Null" }
+	Stinger.Respawn.Rejuvinator = { base = "NoMusic.Null" }
+	Stinger.Rejuvinator.Expired = { base = "NoMusic.Null" }
 
-	Stinger.MidBoss.Arrived =
-	{
-		base = "NoMusic.Announcer"
-		delay = 1.0
-		vsnd_files =
-		[
-			"sounds/music/music_stinger_mid_boss_arrived.vsnd",
-		]
-	}
+	Stinger.Idol.Returned.Team = { base = "NoMusic.Null" }
+	Stinger.Idol.Returned.Opponent = { base = "NoMusic.Null" }
+	Stinger.Idol.AnnounceDrop = { base = "NoMusic.Null" }
 
-	Stinger.Rejuvinator.Claimed.Friendly =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_stinger_rejuv_won.vsnd",
-		]
-	}
-	Stinger.Rejuvinator.Claimed.Enemy =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_stinger_rejuv_lost.vsnd",
-		]
-	}
-	Stinger.Rejuvinator.Descent =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_stinger_rejuv_drop_6s.vsnd",
-		]
-	}
-	Stinger.Respawn.Rejuvinator =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_stinger_rejuv_won.vsnd",
-		]
-	}
-	Stinger.Rejuvinator.Expired =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_stinger_rejuv_lost.vsnd",
-		]
-	}
+	Stinger.Koth.Announce = { base = "NoMusic.Null" }
+	Stinger.Koth.Win = { base = "NoMusic.Null" }
+	Stinger.Koth.Lose = { base = "NoMusic.Null" }
+	Stinger.Koth.Expire = { base = "NoMusic.Null" }
 
-	Stinger.Idol.Returned.Team =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_idol_return_team.vsnd",
-		]
-	}
-	Stinger.Idol.Returned.Opponent =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_idol_return_opponent.vsnd",
-		]
-	}
-	Stinger.Idol.AnnounceDrop =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_idol_announce.vsnd",
-		]
-	}
-
-	Stinger.Koth.Announce =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_koth_announce.vsnd",
-		]
-	}
-	Stinger.Koth.Win =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_koth_win.vsnd",
-		]
-	}
-	Stinger.Koth.Lose =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_koth_lose.vsnd",
-		]
-	}
-	Stinger.Koth.Expire =
-	{
-		base = "NoMusic.Announcer"
-		vsnd_files =
-		[
-			"sounds/music/music_koth_expire.vsnd",
-		]
-	}
+	// These custom sound events are documented here because they cannot be safely
+	// redefined as ordinary events; their music files are replaced with silent WAVs.
+	// Music.Title: music_title_fx_155bpm.mp3, music_title_155bpm.mp3
+	// Music.Hideout: music_hideout_play_base_lp_155bpm.mp3, music_hideout_play_base_lp_fx_155bpm.mp3, music_hideout_play_high_lp_155bpm.mp3, music_hideout_play_low_lp_155bpm.mp3
+	// Music.Shop: music_curio_christmas.mp3, music_curio_seasonal.mp3, music_curio_secret_christmas.mp3, music_curio_secret_seasonal.mp3
+	// Music.Brawl.Draft: brawl/music_brawl_draft_fx_95bpm.mp3, brawl/music_brawl_draft_timer_95bpm.mp3, brawl/music_brawl_draft_95bpm.mp3
+	// Music.Base.Attack: music_core_exposed_lp.mp3
+	// Music.Idol.Pickup.Lp: music_idol_carry_lp_141bpm.mp3, music_idol_carry_distant_lp_141bpm.mp3
+	// Music.Idol.Timer.Lp: music_idol_timer_lp_team_160bpm.mp3, music_idol_timer_lp_opponent_160bpm.mp3
+	// Music.Koth.Capture.Lp: music_koth_capture_160bpm.mp3, music_koth_capture_block_160bpm.mp3, music_koth_capture_contest_160bpm.mp3, music_koth_capture_fx_160bpm.mp3
 
 	_auto_calc_vnsd_duration_ = true
 }
