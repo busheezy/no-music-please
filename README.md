@@ -1,8 +1,8 @@
 # No Music Please
 
-I wanted to remove music on Deadlock. Music-only events are redirected to
-`sounds/common/null.vsnd`; important cues use generated announcer-style
-voicelines instead.
+I wanted to remove music on Deadlock. Music files are replaced at the same paths
+with `null.wav`; important cues use generated announcer-style voicelines
+instead. The sound-event source contains only the TTS overrides.
 
 Run `./gen.sh` to generate two complete packages under `output`:
 
