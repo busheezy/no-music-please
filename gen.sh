@@ -2,6 +2,8 @@
 set -Eeuo pipefail
 
 input="${1:-files.tsv}"
+soundevents_source="no_music_please.vsndevts"
+soundevents_destination="output/soundevents/no_music_please.vsndevts"
 google_tts_language="${GOOGLE_TTS_LANGUAGE:-en-US}"
 google_tts_voice="${GOOGLE_TTS_VOICE:-en-US-Chirp3-HD-Charon}"
 google_tts_volume_gain_db="16"
@@ -107,6 +109,15 @@ google_tts() {
     exit 1
 }
 
+[[ -f "$soundevents_source" ]] || {
+    echo "Soundevents file does not exist: $soundevents_source" >&2
+    exit 1
+}
+
+mkdir -p "$(dirname "$soundevents_destination")"
+echo "COPY -> $soundevents_destination"
+cp "$soundevents_source" "$soundevents_destination"
+
 line_number=0
 while IFS=$'\t' read -r directory filename type value extra; do
     ((line_number += 1))
@@ -138,11 +149,6 @@ while IFS=$'\t' read -r directory filename type value extra; do
                 echo "TTS output was not created: $destination" >&2
                 exit 1
             }
-            ;;
-
-        copy)
-            echo "COPY -> $destination"
-            cp "$value" "$destination"
             ;;
 
         *)
