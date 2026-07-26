@@ -33,7 +33,7 @@ sounds/music	music_hideout_rem_70bpm.wav	copy	null.wav
 sounds/music	music_hideout_rem_fx_70bpm.wav	copy	null.wav
 sounds/music	music_hideout_rem_fx_far_70bpm.wav	copy	null.wav
 sounds/music	music_hideout_search_155bpm.wav	copy	null.wav
-sounds/music	music_idol_announce.wav	tts	The urn is about to spawn!
+sounds/music	music_idol_announce.wav	tts	The urn is spawning!
 sounds/music	music_idol_carry_distant_lp_141bpm.wav	copy	null.wav
 sounds/music	music_idol_carry_lp_141bpm.wav	copy	null.wav
 sounds/music	music_idol_return_opponent.wav	tts	Enemy captured the urn!
@@ -69,18 +69,18 @@ sounds/music	music_stinger_ks_07.wav	copy	null.wav
 sounds/music	music_stinger_ks_08.wav	copy	null.wav
 sounds/music	music_stinger_ks_09.wav	copy	null.wav
 sounds/music	music_stinger_ks_10.wav	copy	null.wav
-sounds/music	music_stinger_mid_boss_arrived.wav	tts	Mid Boss has arrived!
+sounds/music	music_stinger_mid_boss_arrived.wav	copy	null.wav
 sounds/music	music_stinger_player_death.wav	copy	null.wav
 sounds/music	music_stinger_player_respawn.wav	copy	null.wav
 sounds/music	music_stinger_player_respawn_countdown.wav	tts	Respawning soon!
 sounds/music	music_stinger_rejuv_drop_6_5s.wav	copy	null.wav
-sounds/music	music_stinger_rejuv_drop_6s.wav	tts	Rejuvenator dropping!
+sounds/music	music_stinger_rejuv_drop_6s.wav	copy	null.wav
 sounds/music	music_stinger_rejuv_drop_7_5s.wav	copy	null.wav
 sounds/music	music_stinger_rejuv_drop_7s.wav	copy	null.wav
 sounds/music	music_stinger_rejuv_drop_8s.wav	copy	null.wav
 sounds/music	music_stinger_rejuv_drop_9s.wav	copy	null.wav
-sounds/music	music_stinger_rejuv_lost.wav	tts	The enemy claimed the Rejuvenator!
-sounds/music	music_stinger_rejuv_won.wav	tts	Our team claimed the Rejuvenator!
+sounds/music	music_stinger_rejuv_lost.wav	copy	null.wav
+sounds/music	music_stinger_rejuv_won.wav	copy	null.wav
 sounds/music	music_stinger_t1_killed.wav	copy	null.wav
 sounds/music	music_stinger_t3_killed.wav	copy	null.wav
 sounds/music	music_stringer_kill_streak.wav	copy	null.wav

@@ -4,7 +4,7 @@
 	NoMusic.Announcer =
 	{
 		base = "Base.VO.Announcer"
-		volume = 2.0
+		volume = 6.0
 	}
 
 	Stinger.Respawn.Countdown = { base = "NoMusic.Announcer" vsnd_files = [ "sounds/music/music_stinger_player_respawn_countdown.vsnd" ] }
